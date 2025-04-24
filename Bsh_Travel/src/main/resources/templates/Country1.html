@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BSH's Travel</title>
+  <link rel="stylesheet" href="/css/fragments.css?v=1.0.3">
+</head>
+<body>
+  <div class="container">
+    <div th:replace="fragments :: header"></div>
+    <button class="sidebar-toggle-button" onclick="toggleSidebar()">☰ 메뉴</button>
+
+    <div class="main-wrapper">
+      <div class="main-container">
+        <div class="travel-detail">
+          <div class="scroll-buttons">
+            <button onclick="scrollToSection('intro')">📍 여행 소개</button>
+            <button onclick="scrollToSection('places')">📍 방문한 주요 장소</button>
+            <button onclick="scrollToSection('food')">🍜 음식 이야기</button>
+            <button onclick="scrollToSection('tips')">📝 여행 팁</button>
+            <button onclick="scrollToSection('review')">✍️ 여행 총평</button>
+          </div>
+
+          <div id="intro" class="section">
+            <h1>중국 여행기: 고대와 현대가 공존하는 대륙의 여정</h1>
+            <p>
+              2024년 10월, 중국 베이징으로의 여행은 내게 있어 역사 속으로의 시간 여행과도 같았다.
+              자금성과 만리장성 같은 고대 유산부터, 급속히 현대화된 도시 풍경까지 한 도시에서 느낄 수 있는
+              대비가 인상적이었다.
+            </p>
+            <img src="/image/china-wall.jpg" alt="만리장성">
+          </div>
+
+          <div id="places" class="section">
+            <h2>📍 방문한 주요 장소</h2>
+            <ul>
+              <li>🏯 <strong>자금성</strong> - 황제의 궁전. 거대한 궁궐과 대칭 구조가 인상 깊었다.</li>
+              <li>🧱 <strong>만리장성</strong> - 실제로 걸어보니 얼마나 웅장한지 체감됨.</li>
+              <li>🛕 <strong>천단공원</strong> - 조용한 공원에서 현지인들과 함께 태극권 구경.</li>
+              <li>🍢 <strong>왕푸징 야시장</strong> - 양꼬치, 전갈꼬치(!), 마라탕 등 특색 있는 길거리 음식.</li>
+            </ul>
+          </div>
+
+          <div id="food" class="section">
+            <h2>🍜 음식 이야기</h2>
+            <p>
+              중국에서의 음식은 그야말로 미각의 향연이었다. 베이징 오리구이는 겉은 바삭, 속은 촉촉해서 감탄이 절로 나왔고,
+              길거리에서는 5위안짜리 마라탕이 여행의 피로를 풀어줬다. 특히 현지 식당에서 먹은 칭다오 맥주와 양꼬치는 조합이 최고!
+            </p>
+          </div>
+
+          <div id="tips" class="section">
+            <h2>📝 여행 팁</h2>
+            <ul>
+              <li>지하철 교통카드 구매는 필수. 티머니 같은 카드로 충전해서 사용 가능.</li>
+              <li>구글 서비스 제한돼서 VPN 미리 설치해두기.</li>
+              <li>기본적인 중국어 몇 마디 익혀두면 현지 소통에 유리.</li>
+              <li>날씨 변화가 심하므로 겉옷 꼭 챙길 것.</li>
+            </ul>
+          </div>
+
+          <div id="review" class="section">
+            <h2>✍️ 여행 총평</h2>
+            <p>
+              단순히 ‘중국’이라는 나라를 넘어서, 수천 년의 역사와 현대 문명이 공존하는 그 깊이에 감탄한 여정이었다.
+              조금 더 천천히 여유 있게 다양한 도시들을 다녀보고 싶은 마음이 들었다. 다음엔 시안, 상하이, 청두도 꼭 가보고 싶다!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div th:replace="fragments :: sidebar"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+
+    // 각 섹션으로 스크롤하는 함수
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+ // 스크롤 시 버튼 보이게
+    window.addEventListener('scroll', function () {
+      const button = document.getElementById('scrollTopButton');
+      if (window.scrollY > 100) {
+        button.classList.add('show');
+      } else {
+        button.classList.remove('show');
+      }
+    });
+
+    // 스크롤 맨 위로 이동
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+  </script>
+  
+  <button id="scrollTopButton" onclick="scrollToTop()">⬆ 맨 위로</button>
+</body>
+</html>

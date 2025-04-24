@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BSH's Travel</title>
+  <link rel="stylesheet" href="/css/fragments.css?v=1.0.3">
+</head>
+<body>
+  <div class="container">
+    <div th:replace="fragments :: header"></div>
+    <button class="sidebar-toggle-button" onclick="toggleSidebar()">☰ 메뉴</button>
+
+    <div class="main-wrapper">
+      <div class="main-container">
+        <div class="travel-detail">
+          
+        </div>
+      </div>
+
+      <div th:replace="fragments :: sidebar"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
