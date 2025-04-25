@@ -69,6 +69,7 @@ public class MyController {
         List<Tag> tags = TagRep.findByNumber(id); // 여행 ID에 해당하는 태그 목록
 
         // 사이드바에 필요한 정보들을 detail 페이지로 추가
+        
         List<Tag> list2 = TagRep.findAll();
         Set<String> uniqueTagNames = list2.stream()
                                           .map(t -> t.name)
