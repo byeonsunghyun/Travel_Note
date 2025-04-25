@@ -69,16 +69,13 @@
     .section {
       margin: 20px 0;
     }
+    
 
    .place-link {
   text-decoration: none;
   color: #fff;
 }
 
-.place-link:hover {
-  text-decoration: underline;
-  color: #aaa;
-}
 
 
   </style>
@@ -91,11 +88,11 @@
     <div class="main-wrapper">
       <div class="main-container">
         <div class="travel-detail">
-          <div class="scroll-buttons">
+          <!--div class="scroll-buttons">
             <button onclick="scrollToSection('places')">📍 방문한 주요 장소</button>
             <button onclick="scrollToSection('food')">🍜 음식 이야기</button>
             <button onclick="scrollToSection('transit')">🚅 교통수단</button>
-          </div>
+          </div-->
 
           <div class="travel-container">
             <div class="travel-header">
@@ -116,7 +113,7 @@
     <a href="#place1" class="place-link"><strong>자금성</strong></a> – 규모가 엄청나게 크고, 대칭 구조가 인상적이었음.
   </li>
   <li>
-    <a href="#place1" class="place-link"><strong>천안문</strong></a> – 역사적 상징성과 권력의 상징. 약간 긴장됐던 순간도...!
+    <a href="#place1" class="place-link"><strong>천안문</strong></a> – 역사적 상징성과 권력의 상징. 공안들이 찾아옴.
   </li>
   <li>
     <a href="#place1" class="place-link"><strong>경산공원</strong></a> – 자금성을 내려다볼 수 있는 뷰포인트, 경치가 굉장히 좋았음.
@@ -165,21 +162,25 @@
 
  			<!-- 여행 상세 구분선 -->
 		<hr style="border: none; border-top: 2px solid #ccc; margin: 20px 0;" />
- 			
- 
-          <div id="place1" class="section">
-            <h3>자금성 상세</h3>
-            <p>자금성은 황제의 궁전으로, 그 크기와 건축물의 대칭 구조가 매우 인상적입니다. 황제의 삶과 문화에 대한 많은 이야기를 담고 있는 이곳에서 그 당시의 웅장함을 느낄 수 있습니다.</p>
-          </div>
-          <div id="place2" class="section">
+		<h1 class="travel-name">|📖 여행 일기</h1>
+		
+		<h2>- Day 1 -</h2>
+		
+          <div id="place1">
+			  <h3 style="text-align: center;">자금성 상세</h3>
+<img src="/image/naver_email.jpg" alt="자금성" style="width: 100%; height: 300px; object-fit: contain; border-radius: 10px; margin-top: 15px; display: block; margin-left: 0; margin-right: auto;">
+			  <p>자금성은 황제의 궁전으로, 그 크기와 건축물의 대칭 구조가 매우 인상적입니다. 황제의 삶과 문화에 대한 많은 이야기를 담고 있는 이곳에서 그 당시의 웅장함을 느낄 수 있습니다.</p>
+			</div>
+
+          <div id="place2">
             <h3>만리장성 상세</h3>
             <p>만리장성은 중국의 역사적 방어선을 나타내며, 장대한 경치와 함께 고대 중국의 강력한 방어 체계를 엿볼 수 있습니다. 실제로 걸어보면 그 규모와 역사에 놀랄 것입니다.</p>
           </div>
-          <div id="place3" class="section">
+          <div id="place3">
             <h3>천단공원 상세</h3>
             <p>천단공원은 조용하고 평화로운 공간으로, 현지인들과 함께 태극권을 구경하거나 직접 참여할 수 있는 곳입니다. 중국 전통 문화와 자연을 동시에 느낄 수 있는 곳입니다.</p>
           </div>
-          <div id="place4" class="section">
+          <div id="place4">
             <h3>왕푸징 야시장 상세</h3>
             <p>왕푸징 야시장은 다양한 중국 특유의 길거리 음식을 맛볼 수 있는 곳입니다. 양꼬치, 전갈꼬치 등 다양한 먹거리가 가득한 이곳에서 중국의 진짜 맛을 체험해 보세요!</p>
           </div>
