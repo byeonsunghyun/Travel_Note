@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.io.File;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -60,16 +61,9 @@ public class MyController {
     public String VC2025(@PathVariable("id") int id, Model mo) {
         Travel travel = TravelRep.findById(id).orElse(null);
 
-        if (travel == null) {
-            mo.addAttribute("msg", "Not Page");
-            mo.addAttribute("url", "/");
-            return "popups"; // 
-        }
-
         List<Tag> tags = TagRep.findByNumber(id); // 여행 ID에 해당하는 태그 목록
 
         // 사이드바에 필요한 정보들을 detail 페이지로 추가
-        
         List<Tag> list2 = TagRep.findAll();
         Set<String> uniqueTagNames = list2.stream()
                                           .map(t -> t.name)
@@ -81,16 +75,27 @@ public class MyController {
         mo.addAttribute("list2", list2); // 사이드바에 필요한 전체 태그 목록
         mo.addAttribute("uniqueTagNames", uniqueTagNames); // 고유 태그 이름 목록
 
-        return "Country" + id; // 특정 여행 ID에 해당하는 Country 페이지 반환
+        // 페이지가 존재하는지 확인
+        String countryPage = "Country" + id;
+        boolean pageExists = new File("src/main/resources/templates/" + countryPage + ".html").exists(); // 파일 경로 확인
+
+        if (!pageExists) {
+            mo.addAttribute("msg", "준비 중입니다.");
+            mo.addAttribute("url", "/");
+            return "popups";  // 페이지가 없다면 팝업 페이지로 리다이렉트
+        }
+
+        return countryPage;  // 페이지가 존재하면 해당 페이지 반환
+    }
+
+    
+    @GetMapping("/main3")
+    public String main3() {
+    	return "main3";
     }
     
-    @GetMapping("/frame")
-    public String frame() {
+    @GetMapping("/aframe")
+    public String aframe() {
     	return "aframe";
-    }
-    
-    @GetMapping("/addCountry")
-    public String addCountry() {
-    	return "addCountry";
     }
 }

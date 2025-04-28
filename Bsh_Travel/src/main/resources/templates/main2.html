@@ -180,6 +180,7 @@
             padding: 10px;
             border: 1px solid rgba(255, 255, 255, 0.56);
         }
+
     </style>
 </head>
 <body>
@@ -191,15 +192,17 @@
         <div class="main-container">
             <div class="travel-detail">
                 <div class="travel-container">
-			            <div class="travel-header">
-			              <h1 th:text="'🐉 ' + ${travel.name}" class="travel-name">여행 이름</h1>
-			              <p th:text="${travel.date}" class="travel-date">(여행 날짜)</p>
-			            </div>
-			            <div class="tags-container">
-			              <div th:each="tag : ${list2}" 
-			                   th:if="${tag.number} == ${travel.id}" 
-			                   th:text="${tag.name}" class="travel-tags"></div>
-			            </div>
+                    <div class="travel-header">
+                        <h1 class="travel-name">🐉 중국 여행</h1>
+                        <p class="travel-date">2025-01-04 ~ 2025-01-09</p>
+                    </div>
+                    <div class="tags-container">
+                        <div class="travel-tags">#자연</div>
+                        <div class="travel-tags">#도시</div>
+                        <div class="travel-tags">#맛집</div>
+                        <div class="travel-tags">#문화</div>
+                        <div class="travel-tags">#힐링</div>
+                    </div>
                 </div>
                 <div class="scroll-buttons">
                     <button onclick="scrollToSection('places')">📍 방문한 주요 장소</button>
@@ -211,10 +214,10 @@
                     <h2>📍 방문한 주요 장소</h2>
                     <div class="place-grid">
                         <a href="javascript:void(0);" class="place-link" data-id="place1">🛕 천단공원</a>
-                        <a href="javascript:void(0);" class="place-link" data-id="place2">🛍️ 왕푸징 거리</a>
-                        <a href="javascript:void(0);" class="place-link" data-id="place3">🧱 만리장성</a>
+                        <a href="javascript:void(0);" class="place-link" data-id="place2">🎆 천안문</a>
+                        <a href="javascript:void(0);" class="place-link" data-id="place3">🌄 경산공원</a>
                         <a href="javascript:void(0);" class="place-link" data-id="place4">🌿 이화원</a>
-                        <a href="javascript:void(0);" class="place-link" data-id="place5">🏛️ 천안문</a>
+                        <a href="javascript:void(0);" class="place-link" data-id="place5">🎢 유니버셜 베이징</a>
                         <a href="javascript:void(0);" class="place-link" data-id="place6">🧱 만리장성</a>
                         <a href="javascript:void(0);" class="place-link" data-id="place7">🛕 천단공원</a>
                         <a href="javascript:void(0);" class="place-link" data-id="place8">🛍️ 왕푸징 거리</a>
@@ -225,7 +228,7 @@
                     <hr id="place1" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
                     <div>
                         <div>
-                            <h3 style="text-align: center; margin-top:60px;">1. 天坛公园 - 천단공원</h3>
+                            <h3 style="text-align: center; margin-top:60px;">1. 천단공원</h3>
 
                             <div class="outer-slider-container">
                                 <button class="slider-btn outside-btn left-btn">&#10094;</button>
@@ -234,15 +237,15 @@
                                     <div class="image-slider">
                                         <img src="/image/image_country24/place1-2.jpg" class="image-slide" data-index="0">
                                         <img src="/image/image_country24/place1-1.jpg" class="image-slide active" data-index="1">
-                                        <img src="/image/image_country24/place1-3.jpg" class="image-slide" data-index="2">
+                                        <img src="/image/image_country24/place1-3.jpg" class="image-slide active" data-index="2">
                                     </div>
                                 </div>
 
                                 <button class="slider-btn outside-btn right-btn">&#10095;</button>
                             </div>
                             <h4 style="text-align: center; color: grey;" >
-                                입장료 : 10RMB(비수기), 15RMB(성수기)<br>
-                                *내부 명소 입장료 별도 +20RMB
+                                입장료 : 10CNY(비수기), 15CNY(성수기)<br>
+                                *내부 명소 입장료 별도 +20CNY
                             </h4>
                             <p style="margin-top:20px; margin-bottom:60px; text-align: center">
                                 천단공원 명소는 공원 안에 있음<br>
@@ -252,125 +255,35 @@
                             </p>
                         </div>
                     </div>
-                    
-                    <hr id="place2" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
-                    <div>
-                        <div>
-                            <h3 style="text-align: center; margin-top:60px;">2. 王府井大街 - 왕푸징 거리</h3>
 
-                            <div class="outer-slider-container">
-                                <button class="slider-btn outside-btn left-btn">&#10094;</button>
 
-                                <div style="margin-top: 30px" class="slider-container">
-                                    <div class="image-slider">
-                                        <img src="/image/image_country24/place2-1.jpg" class="image-slide" data-index="0">
-                                        <img src="/image/image_country24/place2-2.jpg" class="image-slide active" data-index="1">
-                                        <img src="/image/image_country24/place2-3.jpg" class="image-slide" data-index="2">
-                                    </div>
-                                </div>
 
-                                <button class="slider-btn outside-btn right-btn">&#10095;</button>
-                            </div>
-                            <p style="margin-top:20px; margin-bottom:60px; text-align: center">
-                                내가 원했던 건 벌레튀김 같이 특이한 음식을 판매하는 걸<br>
-                               보길 원했는데 없어졌다고 한다...<br>
-                               거리가 깔끔하고, 상하이의 난징동루 작은버전 느낌
-                            </p>
-                        </div>
+                    <div id="image-modal" class="image-modal">
+                        <span class="close-btn">&times;</span>
+                        <img class="modal-content" id="modal-img" alt="Expanded Image">
+                        <div id="caption"></div>
                     </div>
-                    
-                    <hr id="place3" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
-                    <div>
-                        <div>
-                            <h3 style="text-align: center; margin-top:60px;">3. 八达岭长城 - 팔달령장성</h3>
 
-                            <div class="outer-slider-container">
-                                <button class="slider-btn outside-btn left-btn">&#10094;</button>
 
-                                <div style="margin-top: 30px" class="slider-container">
-                                    <div class="image-slider">
-                                        <img src="/image/image_country24/place3-1.jpg" class="image-slide" data-index="0">
-                                        <img src="/image/image_country24/place3-2.jpg" class="image-slide active" data-index="1">
-                                        <img src="/image/image_country24/place3-5.jpg" class="image-slide" data-index="2">
-                                        <img src="/image/image_country24/place3-3.jpg" class="image-slide active" data-index="3">
-                                        <img src="/image/image_country24/place3-4.jpg" class="image-slide active" data-index="4">
-                                    </div>
-                                </div>
 
-                                <button class="slider-btn outside-btn right-btn">&#10095;</button>
-                            </div>
-                            <h4 style="text-align: center; color: grey;" >
-                                입장료 : 40RMB
-                            </h4>
-                            <p style="margin-top:20px; margin-bottom:60px; text-align: center">
-                               만리장성 볼 수 있는 곳은 여러 곳이 있는데, 우리는 팔달령으로 정했다.<br>
-                               버스 요금은 12RMB? 저렴했던 것으로 기억함.<br>
-                               우육면 먹고 올라감(맛있지는 않음)<br>
-                               겨울에 갔는데 추워 죽는줄 알았음, <span style='color: palevioletred'>따뜻하게 입고 가야함!</span><br>
-                            </p>
-                        </div>
+                    <hr style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
+                    <div id="place2">
+                        <h3 style="text-align: center; margin-top:10px;">- 자금성 -</h3>
+                        <img src="/image/airplane.png" alt="자금성" style="width: 100%; height: 300px; object-fit: contain; border-radius: 10px; margin-top: 15px; display: block; margin-left: 0; margin-right: auto;">
+                        <p>자금성은 황제의 궁전으로, 그 크기와 건축물의 대칭 구조가 매우 인상적입니다. 황제의 삶과 문화에 대한 많은 이야기를 담고 있는 이곳에서 그 당시의 웅장함을 느낄 수 있습니다.</p>
                     </div>
-                    
-                    <hr id="place4" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
-                    <div>
-                        <div>
-                            <h3 style="text-align: center; margin-top:60px;">4. 颐和园 - 이화원</h3>
-
-                            <div class="outer-slider-container">
-                                <button class="slider-btn outside-btn left-btn">&#10094;</button>
-
-                                <div style="margin-top: 30px" class="slider-container">
-                                    <div class="image-slider">
-                                        <img src="/image/image_country24/place4-1.jpg" class="image-slide" data-index="0">
-                                        <img src="/image/image_country24/place4-2.jpg" class="image-slide active" data-index="1">
-                                        <img src="/image/image_country24/place4-3.jpg" class="image-slide" data-index="2">
-                                        <img src="/image/image_country24/place4-4.jpg" class="image-slide active" data-index="3">
-                                        <img src="/image/image_country24/place4-5.jpg" class="image-slide active" data-index="4">
-                                    </div>
-                                </div>
-
-                                <button class="slider-btn outside-btn right-btn">&#10095;</button>
-                            </div>
-                            <h4 style="text-align: center; color: grey;" >
-                                입장료 : 20RMB
-                            </h4>
-                            <p style="margin-top:20px; margin-bottom:60px; text-align: center">
-                               엄청 넓음
-                            </p>
-                        </div>
+                    <hr style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
+                    <div id="place3">
+                        <h3 style="text-align: center; margin-top:10px;">- 자금성 -</h3>
+                        <img src="/image/airplane.png" alt="자금성" style="width: 100%; height: 300px; object-fit: contain; border-radius: 10px; margin-top: 15px; display: block; margin-left: 0; margin-right: auto;">
+                        <p>자금성은 황제의 궁전으로, 그 크기와 건축물의 대칭 구조가 매우 인상적입니다. 황제의 삶과 문화에 대한 많은 이야기를 담고 있는 이곳에서 그 당시의 웅장함을 느낄 수 있습니다.</p>
                     </div>
-                    
-                    <hr id="place5" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
-                    <div>
-                        <div>
-                            <h3 style="text-align: center; margin-top:60px;">5. 天安门 - 천안문</h3>
-
-                            <div class="outer-slider-container">
-                                <button class="slider-btn outside-btn left-btn">&#10094;</button>
-
-                                <div style="margin-top: 30px" class="slider-container">
-                                    <div class="image-slider">
-                                        <img src="/image/image_country24/place5-1.jpg" class="image-slide" data-index="0">
-                                        <img src="/image/image_country24/place5-2.jpg" class="image-slide active" data-index="1">
-                                        <img src="/image/image_country24/place5-3.jpg" class="image-slide" data-index="2">
-                                        <img src="/image/image_country24/place5-4.jpg" class="image-slide active" data-index="3">
-                                        <img src="/image/image_country24/place5-5.jpg" class="image-slide active" data-index="4">
-                                    </div>
-                                </div>
-
-                                <button class="slider-btn outside-btn right-btn">&#10095;</button>
-                            </div>
-                            <h4 style="text-align: center; color: grey;" >
-                                입장료 : 아마 무료였던걸로 기억함
-                            </h4>
-                            <p style="margin-top:20px; margin-bottom:60px; text-align: center">
-                               인상 깊었던 곳. 중국 주석의 권위가 느껴졌음.<br>
-                               사진 찍고 있는데, 공안 4~5명이 다가와 휴대폰 검사하면서 엄격하게 관리했음.<br>
-                               확인하고 이 정도는 괜찮다고 보내줬는데, 좀 쫄았다..<br>
-                            </p>
-                        </div>
+                    <hr style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
+                    <div id="place4">
+                        <h3 style="text-align: center; margin-top:10px;">- 자금성 -</h3>
+                        <img src="/image/airplane.png" alt="자금성" style="width: 100%; height: 300px; object-fit: contain; border-radius: 10px; margin-top: 15px; display: block; margin-left: 0; margin-right: auto;">
+                        <p>자금성은 황제의 궁전으로, 그 크기와 건축물의 대칭 구조가 매우 인상적입니다. 황제의 삶과 문화에 대한 많은 이야기를 담고 있는 이곳에서 그 당시의 웅장함을 느낄 수 있습니다.</p>
                     </div>
-                    
                 </div>
 
                 <hr style="border: none; border-top: 2px solid #ccc;" id="food"/>
@@ -379,11 +292,11 @@
                         <div class="place-grid">
                             <a href="javascript:void(0);" class="place-link" data-id="food1">🍜️ 중국식 짜장면</a>
                             <a href="javascript:void(0);" class="place-link" data-id="food2">🍡 아이스크림</a>
-                            <a href="javascript:void(0);" class="place-link" data-id="food3">🍲 훠궈</a>
-                            <a href="javascript:void(0);" class="place-link" data-id="food4">🥟 만두</a>
-                            <a href="javascript:void(0);" class="place-link" data-id="food5">🛍️ 왕푸징 거리</a>
-                            <a href="javascript:void(0);" class="place-link" data-id="food6">🏘️ 전문대가</a>
-                            <a href="javascript:void(0);" class="place-link" data-id="food7">🐼 베이징 동물원</a>
+                            <a href="javascript:void(0);" class="place-link" data-id="place6">🧱 만리장성</a>
+                            <a href="javascript:void(0);" class="place-link" data-id="place7">🛕 천단공원</a>
+                            <a href="javascript:void(0);" class="place-link" data-id="place8">🛍️ 왕푸징 거리</a>
+                            <a href="javascript:void(0);" class="place-link" data-id="place9">🏘️ 전문대가</a>
+                            <a href="javascript:void(0);" class="place-link" data-id="place10">🐼 베이징 동물원</a>
                         </div><br>
 
                     <hr id="food1" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
@@ -441,58 +354,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <hr id="food3" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
-                    <div>
-                        <div>
-                            <h3 style="text-align: center; margin-top:60px;">3. 南城香 - 훠궈 ⭐</h3>
-                            <h4 style="text-align: center; color: gray;">(프랜차이즈, 베이징)</h4>
-
-                            <div class="outer-slider-container">
-                                <button class="slider-btn outside-btn left-btn">&#10094;</button>
-
-                                <div style="margin-top: 30px" class="slider-container">
-                                    <div class="image-slider">
-                                        <img src="/image/image_country24/food3-1.jpg" class="image-slide active" data-index="0">
-                                        <img src="/image/image_country24/food3-2.jpg" class="image-slide" data-index="1">
-                                        <img src="/image/image_country24/food3-3.jpg" class="image-slide active" data-index="2">
-                                        <img src="/image/image_country24/food3-4.jpg" class="image-slide" data-index="3">
-                                    </div>
-                                </div>
-
-                                <button class="slider-btn outside-btn right-btn">&#10095;</button>
-                            </div>
-                            <p style="margin-top:20px; margin-bottom:60px; text-align: center">
-                                친구가 KFC랑 비슷하다고 해서 흥미가 생겨 들어가봄<br>
-                                가격도 훠궈치고 나름 저렴했고, 혼밥하기 좋을 것 같음<br>
-                                맛은 무난했지만, 개인적으로 엄청 만족
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <hr id="food4" style="border: none; border-top: 1px solid #555; margin: 10px 0;" />
-                    <div>
-                        <div>
-                            <h3 style="text-align: center; margin-top:60px;">4. 庆丰包子铺 - 만두</h3>
-                            <h4 style="text-align: center; color: gray;">(프랜차이즈, 베이징)</h4>
-
-                            <div class="outer-slider-container">
-                                <button class="slider-btn outside-btn left-btn">&#10094;</button>
-
-                                <div style="margin-top: 30px" class="slider-container">
-                                    <div class="image-slider">
-                                        <img src="/image/image_country24/food4-1.jpg" class="image-slide active" data-index="0">
-                                        <img src="/image/image_country24/food4-2.jpg" class="image-slide" data-index="1">
-                                    </div>
-                                </div>
-
-                                <button class="slider-btn outside-btn right-btn">&#10095;</button>
-                            </div>
-                            <p style="margin-top:20px; margin-bottom:60px; text-align: center">
-                                무난하게 맛있음, 가격도 나쁘지 않아서 가볍게 먹기 좋음
-                            </p>
-                        </div>
-                    </div>
 
                 <hr style="border: none; border-top: 2px solid #ccc;" id="transit"/>
                 <div class="section">
@@ -653,12 +514,6 @@
 
             </div>
         </div>
-        
-        <div id="image-modal" class="image-modal">
-                        <span class="close-btn">&times;</span>
-                        <img class="modal-content" id="modal-img" alt="Expanded Image">
-                        <div id="caption"></div>
-                    </div>
 
         <div th:replace="fragments :: sidebar"></div>
     </div>
@@ -727,12 +582,6 @@
                 });
             }
 
-            // 이미지가 한 장 이하면 버튼 숨김
-            if (slides.length <= 1) {
-                if (leftBtn) leftBtn.style.display = "none";
-                if (rightBtn) rightBtn.style.display = "none";
-            }
-
             // 이미지 클릭 시 모달 띄우기
             slides.forEach(slide => {
                 slide.addEventListener("click", () => {
@@ -743,17 +592,15 @@
             });
 
             // 좌우 버튼
-            if (slides.length > 1) {
-                leftBtn.addEventListener("click", () => {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    showSlide(currentIndex);
-                });
+            leftBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            });
 
-                rightBtn.addEventListener("click", () => {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    showSlide(currentIndex);
-                });
-            }
+            rightBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            });
 
             showSlide(currentIndex);
         });
@@ -769,7 +616,6 @@
             }
         });
     });
-
 
 
 
